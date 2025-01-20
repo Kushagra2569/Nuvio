@@ -1,4 +1,4 @@
-module changeme
+module nuvio
 
 go 1.21
 

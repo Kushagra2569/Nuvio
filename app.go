@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"nuvio/modules/tasktracker"
 )
 
 // App struct
@@ -22,6 +23,8 @@ func (a *App) startup(ctx context.Context) {
 }
 
 // Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
+func (a *App) Tracker_start(name string) string {
+	name = tracker.Tracker_main(name)
+	fmt.Println("in tracker caller")
+	return name
 }
