@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import { Tracker_start } from "../wailsjs/go/main/App";
+import Home from './components/Home';
 
 function App() {
   const [resultText, setResultText] = useState("Please enter your name below 👇");
@@ -13,12 +14,13 @@ function App() {
   }
 
   return (
-    <div id="App">
-      <div id="result" className="result">{resultText}</div>
+    <div id="App" className='w-full h-screen flex justify-center items-center'>
+      <Home/>
+      {/* <div id="result" className="result">{resultText}</div>
       <div id="input" className="input-box">
         <input id="name" className="input" onChange={updateName} autoComplete="off" name="input" type="text" />
         <button className="btn" onClick={greet}>Greet</button>
-      </div>
+      </div> */}
     </div>
   )
 }
