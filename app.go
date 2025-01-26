@@ -2,8 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
-	"nuvio/modules/tasktracker"
 )
 
 // App struct
@@ -20,11 +18,4 @@ func NewApp() *App {
 // so we can call the runtime methods
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
-}
-
-// Greet returns a greeting for the given name
-func (a *App) Tracker_start(name string) string {
-	name = tracker.Tracker_main(name)
-	fmt.Println("in tracker caller")
-	return name
 }
