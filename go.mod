@@ -4,7 +4,7 @@ go 1.21
 
 toolchain go1.23.0
 
-require github.com/wailsapp/wails/v2 v2.7.1
+require github.com/wailsapp/wails/v2 v2.9.2
 
 require (
 	github.com/bep/debounce v1.2.1 // indirect
@@ -35,5 +35,3 @@ require (
 	golang.org/x/sys v0.20.0 // indirect
 	golang.org/x/text v0.15.0 // indirect
 )
-
-// replace github.com/wailsapp/wails/v2 v2.7.1 => C:\Users\kusha\go\pkg\mod
