@@ -14,7 +14,7 @@ interface Todo {
   priorityValue: number;
 }
 
-export default function TodoApp() {
+export default function TaskTracker() {
   const [val, setVal] = useState<Todo[]>([]);
   const [input, setInput] = useState<string>("");
 

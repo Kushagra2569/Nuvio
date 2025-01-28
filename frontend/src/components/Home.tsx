@@ -1,24 +1,37 @@
-import SpotifyHome from "./sub/music/SpotifyHome"
-import TaskTracker from "./sub/tasks-app/TaskTracker"
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import SpotifyHome from './sub/music/SpotifyHome';
+import TaskTracker from './sub/tasks-app/TaskTracker';
+import TaskBar from './sub/common/TaskBar';
+import HomeWidgets from './sub/common/HomeWidgets';
 
-type propsHome = {
 
-}
+const Home = () => {
 
-export default function Home(props: propsHome) {
-    return (
-        <div className="flex md:flex-wrap w-full h-full items-center">
-            <div className="lhs flex flex-col justify-evenly h-full w-1/3 border border-black">
-                <div className="music-wrapper flex-1 border border-black">
-                    <SpotifyHome/>
-                </div>
-                <div className="task-tracker-wrapper flex-2 border border-black">
-                    <TaskTracker/>
-                </div>
-            </div>
-            <div className="rhs h-full w-2/3 border-l-4 border-black">
-                Large RHS
-            </div>
+
+  return (
+    <div className='w-full h-full flex flex-col justify-start items-start'>
+        <div className='bg-[#4cb1b3] w-full'>
+            <TaskBar/>
         </div>
-    )
-}
+        <div className="flex bg-[#004A4E] w-full h-full">
+        <Router>
+            <nav className="bg-[#4cb1b3]">
+                <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/music">Music</Link></li>
+                <li><Link to="/tasktracker">TaskTracker</Link></li>
+                </ul>
+            </nav>
+
+            <Routes>
+                <Route path="/" element={<HomeWidgets />} />
+                <Route path="/music" element={<SpotifyHome />} />
+                <Route path="/tasktracker" element={<TaskTracker />} />
+            </Routes>
+        </Router>
+    </div>
+    </div>
+  );
+};
+
+export default Home;
